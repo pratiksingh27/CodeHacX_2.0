@@ -15,15 +15,11 @@ const WriteBlog = () => {
   const [job, setJob] = useState("");
   const [applyBy, setApplyBy] = useState("");
   const [redirectUrl, setRedirectUrl] = useState("");
-  const [imgFile, setImgFile] = useState(null);
 
   const handleSubmite = async (e) => {
     e.preventDefault();
     
-    try {
-      const imgRef = firestore.storage().ref().child(`blog_images/${imgFile.name}`);
-      await imgRef.put(imgFile);
-      const imgUrl = await imgRef.getDownloadURL();
+    try {     
 
       await addDoc(collection(firestore, "Blogs"), {
         title,
@@ -73,7 +69,7 @@ const WriteBlog = () => {
         </div>
         <div className='py-4'>
           <label className='block text-start'>Location</label><br></br>
-          <textarea className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' onChange={(e) => setLocation(e.target.value)} value={location} name="message" placeholder='Write your Article' required/>
+          <input className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="text" onChange={(e) => setLocation(e.target.value)} value={location} name="message" placeholder='Write your Article' required/>
         </div>
         <div className='py-4'>
           <label className='block text-start'>Stipend</label><br></br>
@@ -81,15 +77,15 @@ const WriteBlog = () => {
         </div>
         <div className='py-4'>
           <label className='block text-start'>Duration</label><br></br>
-          <textarea className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' onChange={(e) => setDuration(e.target.value)} value={duration} name="message" placeholder='Write your Article' required/>
+          <input className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="text" onChange={(e) => setDuration(e.target.value)} value={duration} name="message" placeholder='Write your Article' required/>
         </div>
         <div className='py-4'>
           <label className='block text-start'>Joining Date</label><br></br>
-          <textarea className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' onChange={(e) => setStart(e.target.value)} value={start} name="message" placeholder='Write your Article' required/>
+          <input className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="text" onChange={(e) => setStart(e.target.value)} value={start} name="message" placeholder='Write your Article' required/>
         </div>
         <div className='py-4'>
           <label className='block text-start'>Job Type</label><br></br>
-          <textarea className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' onChange={(e) => setJob(e.target.value)} value={job} name="message" placeholder='Write your Article' required/>
+          <input className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="text" onChange={(e) => setJob(e.target.value)} value={job} name="message" placeholder='Write your Article' required/>
         </div>
         <div className='py-4'>
           <label className='block text-start'>Last Date</label><br></br>
@@ -101,7 +97,7 @@ const WriteBlog = () => {
         </div>
         <div className='py-4'>
           <label className='block text-start'>Post Image</label><br></br>
-          <input className='p-2 outline flex w- rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="file" onChange={(e) => setImgFile(e.target.files[0])} accept="image/*" required />
+          <input className='p-2 outline flex w- rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="text" onChange={(e) => setImgurl(e.target.value) } name="image" placeholder='Past Image Link' />
         </div>
         <input className='bg-[#302b63] w-[200px] rounded-md font-medium my-4 mx-auto py-1 text-white' type="submit" value="Send" />
       </form>
@@ -110,3 +106,4 @@ const WriteBlog = () => {
 };
 
 export default WriteBlog;
+
