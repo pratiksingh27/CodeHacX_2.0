@@ -3,6 +3,7 @@ import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
 import AboutUs from "./pages/About";
 import Blog from "./pages/Blog";
+import Login from "./pages/Login";
 
 
 
@@ -17,7 +18,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/blog/:aID" element={<Blog />} />
-        {/* <Route path="/login" element={<Login />}/> */}
+        
+       
+       
+        <Route path="/login" element={<Login />}/>
         
       </Routes>
       </RootLayout>

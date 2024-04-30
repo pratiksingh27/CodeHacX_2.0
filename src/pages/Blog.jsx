@@ -29,6 +29,7 @@ console.log("aID:", aID); // Debug statement
       {aID === "read" ? (
         <DisplayBlogs handleRedirection={handleRedirection} />
       ) : aID === "write" ? (
+        
         <WriteBlog />
       ) : (
         // Redirect to another website when aID is a valid URL

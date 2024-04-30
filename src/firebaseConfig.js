@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { getAuth,signInWithEmailAndPassword  } from "firebase/auth";
 import { getStorage } from "firebase/storage"; 
 // import { getAnalytics } from "firebase/analytics";
 
@@ -26,3 +26,17 @@ const auth = getAuth(app);
 const storage = getStorage(app);
 export { firestore, auth, storage };
 // const analytics = getAnalytics(app);
+
+export const signUp = (email,password)=>{
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+}
