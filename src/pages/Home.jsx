@@ -80,7 +80,7 @@ const Home = () => {
             </div>
             <div className="relative z-10 text-white text-center">
               <div className="mb-2 sm:mb-3 md:mb-5 lg:mb-7">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold">Welcome to My Website</h1>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold">Welcome to CodeHacX</h1>
                 <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl">&lt;{typedText}/&gt;</p>
               </div>
               <div className="flex justify-center space-x-4">

@@ -38,7 +38,7 @@ const About = () => {
         <main className="flex w-full flex-col items-center justify-center">
           <div className="pt-12 px-4">
             <h1 className="sm:mb-12 lg:text-7xl sm:text-6xl text-4xl mb-6">
-              Passion Fuels Purpose!
+            Your Tech Gateway
             </h1>
             <div className="grid w-full grid-cols-8 sm:gap-16 gap-8">
               <div className="xl:col-span-3 flex flex-col items-start justify-start md:col-span-4 md:order-2 col-span-8">
@@ -46,53 +46,50 @@ const About = () => {
                   Know Us More
                 </h2>
                 <p className="font-medium">
-                  Hi, I&apos;m Pratik, a web developer and UI/UX designer with a
-                  passion for creating beautiful, functional, and
-                  user-centered digital experiences. With 2+ years of
-                  experience in the field. I am always looking for new and
-                  innovative ways to bring my clients visions to life.
+                At CodeHacX, we&apos;re dedicated to empowering students for success in the tech industry. Our College Connect program offers curated internship/job opportunities, upskilling resources, and a supportive community. With a student-centric approach, we prioritize your needs and aspirations. Backed by industry expertise, we provide guidance to navigate the tech landscape. We continuously innovate to meet evolving needs. 
                 </p>
 
                 <p className="font-medium my-4">
-                  I believe that design is about more than just making things
-                  look pretty, it&apos;s about solving problems and creating
-                  intuitive, enjoyable experiences for users.
+                We&apos;re a group of tech enthusiasts who love to discuss coding, programming, and everything tech-related.
                 </p>
               </div>
 
               <div className="xl:col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8  md:col-span-4 md:order-1 col-span-8">
                 <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[1rem] bg-dark" />
                 <img
-                  src={logo.src}
+                  src={logo}
                   alt="CodeHacX Logo"
-                  className="w-full h-auto rounded-2xl"
+                  className="w-full h-auto rounded-full"
                 />
               </div>
 
               <div className="xl:col-span-2 sm:flex xl:flex-col xl:items-end justify-between col-span-8 flex-row items-center md:order-3">
-                <div className="flex flex-col xl:items-end justify-center items-center">
-                  <span className="inline-block md:text-5xl font-bold  sm:text-4xl xs:text-4xl text-3xl md:self-center">
-                    <AnimatedNumber value={20} />+
-                  </span>
-                  <h2 className="md:text-xl font-medium capitalize text-dark/70  xl:text-center sm:text-lg text-base xs:text-sm">
-                    Projects completed
-                  </h2>
-                </div>
+                
 
                 <div className="flex flex-col xl:items-end justify-center items-center">
                   <span className="inline-block md:text-5xl font-bold sm:text-4xl xs:text-4xl text-3xl md:self-center">
                     <AnimatedNumber value={3} />+
                   </span>
                   <h2 className="md:text-xl font-medium capitalize text-dark/70 text-center sm:text-lg text-base xs:text-sm">
-                    hackathons
+                  collaboration
                   </h2>
                 </div>
+
                 <div className="flex flex-col xl:items-end justify-center items-center">
                   <span className="inline-block md:text-5xl font-bold  sm:text-4xl xs:text-4xl text-3xl md:self-center">
-                    <AnimatedNumber value={2} />+
+                    <AnimatedNumber value={7} />+
+                  </span>
+                  <h2 className="md:text-xl font-medium capitalize text-dark/70  xl:text-center sm:text-lg text-base xs:text-sm">
+                    Projects completed
+                  </h2>
+                </div>
+                
+                <div className="flex flex-col xl:items-end justify-center items-center">
+                  <span className="inline-block md:text-5xl font-bold  sm:text-4xl xs:text-4xl text-3xl md:self-center">
+                    <AnimatedNumber value={500} />+
                   </span>
                   <h2 className="md:text-xl font-medium capitalize text-dark/70 sm:text-lg  text-center text-base xs:text-sm">
-                    years of experience
+                    Members
                   </h2>
                 </div>
               </div>
