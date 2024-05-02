@@ -46,7 +46,7 @@ const About = () => {
                   Know Us More
                 </h2>
                 <p className="font-medium">
-                At CodeHacX, we&apos;re dedicated to empowering students for success in the tech industry. Our College Connect program offers curated internship/job opportunities, upskilling resources, and a supportive community. With a student-centric approach, we prioritize your needs and aspirations. Backed by industry expertise, we provide guidance to navigate the tech landscape. We continuously innovate to meet evolving needs. 
+                At <span className="bg-blue-600 rounded-md px-1 text-white">CodeHacX</span>, we&apos;re dedicated to empowering students for success in the tech industry. Our College Connect program offers curated internship/job opportunities, upskilling resources, and a supportive community. With a student-centric approach, we prioritize your needs and aspirations. Backed by industry expertise, we provide guidance to navigate the tech landscape. We continuously innovate to meet evolving needs. 
                 </p>
 
                 <p className="font-medium my-4">
@@ -96,6 +96,10 @@ const About = () => {
             </div>
           </div>
         </main>
+        <div className="px-4 pt-12">
+          <h1 className="font-semibold text-2xl underline">Our Team</h1>
+          <p className="pt-8 font-semibold"><span className="text-teal-500 flex py-1.5 px-3 text-lg bg-teal-50 rounded-xl w-fit">Coming Soon</span></p>
+        </div>
         {/* <Auto/> */}
       </div>
     </>
@@ -103,9 +107,9 @@ const About = () => {
 };
 
 const mainContentStyle = {
-  padding: "1rem",
+  paddingRight: "1rem",
   overflowY: "auto",
-  maxHeight: "calc(100vh - 2rem)",
+  maxHeight: "calc(100vh)",
   scrollbarWidth: "thin",
 };
 

@@ -1,19 +1,19 @@
-// import logo from "../images/logo.jpeg";
-// import { HiOutlineUserGroup } from "react-icons/hi";
-import { motion } from 'framer-motion';
 import { useEffect, useState } from "react";
-import Topbar from '../layouts/Topbar';
-const Home = () => {
+import { motion } from "framer-motion";
+import Meteors from "../layouts/Component/meteors";
+import Loader from "../layouts/Component/LoaderSimple";
+import Topbar from "../layouts/Topbar";
 
+const Event = () => {
   const [loading, setLoading] = useState(true);
   const [textIndex, setTextIndex] = useState(0);
-  const [typedText, setTypedText] = useState('');
+  const [typedText, setTypedText] = useState("");
   useEffect(() => {
-    const texts = ["Think it","Do it","Make it happen"];
+    const texts = ["Think it", "Do it", "Make it happen"];
     // Rest of the code...
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Simulating a 2-second loading delay
+    }, 2100); // Simulating a 2-second loading delay
     // Autotyping effect
     if (!loading) {
       let index = 0;
@@ -26,7 +26,7 @@ const Home = () => {
         } else {
           // Move to the next text after typing completes
           setTimeout(() => {
-            setTypedText('');
+            setTypedText("");
             setTextIndex((prevIndex) => prevIndex + 1);
           }, 1000); // Delay before starting to type the next text
         }
@@ -34,95 +34,101 @@ const Home = () => {
       typeWriter();
     }
     return () => clearTimeout(timer);
-  },  [loading, textIndex]);
+  }, [loading, textIndex]);
 
-    return (
-        <>
-        {/* <div className="flex items-center justify-between gap-2.5 font-medium bg-white rounded-l-lg shadow-sm px-4 py-2 md:hidden">
-        <div className="flex justify-center items-center">
-        <img src={logo} alt="logo" width={55} className="rounded-full" />
-        <span className="text-xl whitespace-pre ml-1">CodeHacX</span>
-        </div>
-        <HiOutlineUserGroup className="text-slater-100" size={23} />
-      </div> */}
-      <Topbar/>
-        <div style={mainContentStyle} className=" scrollbar-thumb-gray-300 scrollbar-track-gray-100 hover:scrollbar-thumb-gray-400">
-        <div>
-      {loading ? (
-        <div className="h-screen flex items-center justify-center bg-gray-900">
-          <div className="animate-pulse text-white text-center">
-            <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-              <div className="bg-gray-800 w-64 sm:w-96 h-16 sm:h-20 md:h-24 lg:h-32 mb-4"></div>
-              <div className="bg-gray-800 w-80 sm:w-96 h-8 sm:h-10 md:h-12 lg:h-16"></div>
-            </div>
-            <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-              <div className="bg-gray-800 w-24 sm:w-32 md:w-40 lg:w-48 mx-auto rounded-full"></div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative bg-gray-900"
-        >
-          <div className="h-screen flex items-center justify-center">
-            <div className="absolute inset-0 z-0">
-              <img
-                className="w-full h-full object-cover"
-                src="https://source.unsplash.com/random"
-                alt="Hero Background"
-              />
-              <div
-                className="absolute inset-0 bg-black opacity-50"
-              />
-            </div>
-            <div className="relative z-10 text-white text-center">
-              <div className="mb-2 sm:mb-3 md:mb-5 lg:mb-7">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold">Welcome to CodeHacX</h1>
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl">&lt;{typedText}/&gt;</p>
-              </div>
-              <div className="flex justify-center space-x-4">
-                    <button 
+  return (
+    <>
+      <Topbar />
+      <div
+        style={mainContentStyle}
+        className="scrollbar-thumb-gray-300 scrollbar-track-gray-100 hover:scrollbar-thumb-gray-400"
+      >
+        <div className="relative h-full w-full overflow-hidden rounded-lg border bg-background md:shadow-xl">
+          <Meteors number={30} />
+          <div>
+            {loading ? (
+              <Loader />
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="bg-gray-100 min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-4 overflow-hidden"
+              >
+                {/* Text section */}
+                <div className="text-center grid items-center md:text-left md:w-1/2 md:pr-8 md:pl-8">
+                  <h1 className="text-3xl md:text-5xl/[1.2] font-bold text-gray-800 mb-4">
+                    Building a <br></br>
+                    <i className="bg-blue-500 border rounded-md ">
+                      Community
+                    </i>{" "}
+                    for <br></br>the Future
+                  </h1>
+                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl">
+                    &lt;{typedText}/&gt;
+                  </p>
+                  <div className="mt-6">
+                  <button 
                       onClick={() => window.open("mailto:codedexorg@gmail.com")}
-                      className="bg-transprent border hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      className="bg-white text-gray-600 border-2 border-blue-500 hover:border-0 hover:bg-blue-700 hover:text-white font-bold py-2 px-4 rounded mr-2"
                     >
                       Send Email
                     </button>
-                    <button 
-                      onClick={() => window.open("https://linktr.ee/codehacx", "_blank")}
-                      className="bg-[#5E5AD9] hover:bg-white hover:text-black/55 text-white font-bold py-2 px-4 rounded"
+                    <button
+                      onClick={() =>
+                        window.open("https://linktr.ee/codehacx", "_blank")
+                      }
+                      className="bg-blue-700 hover:bg-blue-800 hover:border-blue-700 hover:border-2 text-white font-bold py-2 px-4 rounded"
                     >
                       Join Us
                     </button>
                   </div>
-              <div className="mt-2 sm:mt-6 md:mt-8 lg:mt-10">
-                <img
-                  className="mx-auto rounded-full w-24 sm:w-28 md:w-36 lg:w-48"
-                  src="https://source.unsplash.com/random"
-                  alt="Profile"
-                />
-              </div>
-              
-            </div>
+                </div>
+
+                <div
+                  className="md:w-1/2 md:pl-8 relative md:flex hidden justify-center items-center h-screen"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle at 50% 50%, transparent 10%, #000 10%, #000 11%, transparent 11%)",
+                    backgroundSize: "20px 20px",
+                  }}
+                >
+                  <div className="absolute top-0 right-0 xl:mt-20 mt-6 mr-12">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Person"
+                      className="w-48 h-24 rounded-xl mb-4"
+                    />
+                  </div>
+                  <div className="absolute top-1/2 transform -translate-y-1/2 left-0 ml-10">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Brand Logo"
+                      className="w-36 h-36 rounded-full mb-4"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 right-0 xl:mb-20 mb-6 mr-12">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Person"
+                      className="w-24 h-48 rounded-xl mb-4"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </div>
-        </motion.div>
-      )}
-    </div>
-      
         </div>
-        
-       
-        </>
-    )
+      </div>
+    </>
+  );
 };
-// Inline CSS using the style attribute
+
 const mainContentStyle = {
-    // Define your CSS styles here
-    padding: '1rem',
-    overflowY: 'auto',
-    maxHeight: 'calc(100vh - 2rem)', // Adjust according to your layout
-    scrollbarWidth: 'thin',
-  };
-export default Home;
+  paddingRight: "0.2rem",
+  overflowY: "auto",
+  maxHeight: "calc(100vh)",
+  scrollbarWidth: "thin",
+};
+
+export default Event;

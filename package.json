@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
     "firebase": "^10.11.0",
     "framer-motion": "^11.0.28",

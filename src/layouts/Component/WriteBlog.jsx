@@ -85,7 +85,7 @@ const WriteBlog = () => {
             <input className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="text" onChange={(e) => setDuration(e.target.value)} value={duration} name="message" placeholder='Write your Article' required/>
           </div>
           <div className='py-4'>
-            <label className='block text-start'>Joining Date</label><br></br>
+            <label className='block text-start'>Batch</label><br></br>
             <input className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="text" onChange={(e) => setStart(e.target.value)} value={start} name="message" placeholder='Write your Article' required/>
           </div>
           <div className='py-4'>
@@ -93,7 +93,7 @@ const WriteBlog = () => {
             <input className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="text" onChange={(e) => setJob(e.target.value)} value={job} name="message" placeholder='Write your Article' required/>
           </div>
           <div className='py-4'>
-            <label className='block text-start'>Last Date</label><br></br>
+            <label className='block text-start'>Degree</label><br></br>
             <input className='p-2 outline flex w-50% rounded-md text-black mr-2 md:w-full w-full outline-none border-b-2' type="text" onChange={(e) => setApplyBy(e.target.value)} value={applyBy} placeholder='Enter Your blogtitle' required/>
           </div>
           <div className='py-4'>

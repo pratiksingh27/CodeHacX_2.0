@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/About";
 import Blog from "./pages/Blog";
 import Login from "./pages/Login";
+import Event from "./pages/Event";
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/event" element={<Event />} />
         <Route path="/blog/:aID" element={<Blog />} />
         
        

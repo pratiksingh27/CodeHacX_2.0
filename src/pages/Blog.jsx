@@ -35,17 +35,6 @@ console.log("aID:", aID); // Debug statement
         // Redirect to another website when aID is a valid URL
         handleRedirection(aID)
       )}
-      {/* <h1>Blog / {aID}</h1>
-      {aID === "read" ? (
-        // Show Read Blog section
-        <DisplayBlogs handleRedirection={handleRedirection} />
-      ) : aID === "write" ? (
-        // Show Write Blog section only if user is logged in
-        currentUser ? <WriteBlog /> : <Login />
-      ) : (
-        // Redirect to another website when aID is a valid URL
-        handleRedirection(aID)
-      )} */}
     </>
   );
 };
@@ -73,28 +62,3 @@ export default Blog;
 // };
 
 // export default Blog;
-
-// import { useParams } from "react-router-dom";
-// // import { useParams } from "react-router-dom";
-
-// // const Blog = () => {
-// //     const { aID } = useParams();
-// //         let content;
-// //     if (aID === "read") {
-// //         content = <p>This is the content for Blog 1.</p>;
-// //     } else if (aID === "write") {
-// //         content = <p>This is the content for Blog 2.</p>;
-// //     } else {
-// //         content = <p>Content for this blog is not available.</p>;
-// //     }
-
-// //     return (
-// //         <>
-// //             <h1>Blog / {aID}</h1>
-// //             {content}
-// //         </>
-// //     )
-// //     ;
-// // };
-
-// // export default Blog;
