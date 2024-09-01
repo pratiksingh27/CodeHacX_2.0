@@ -132,9 +132,9 @@ function Sidebar() {
             </Link>
           </li>
           <li>
-            <Link to="/setting" className={`link ${isActive("/setting") ? "active" : ""}`}>
+            <Link to="/findevent" className={`link ${isActive("/findevent") ? "active" : ""}`}>
               <SlSettings size={23} className="min-w-max" />
-              Setting
+              Find Event
             </Link>
           </li>
         </ul>

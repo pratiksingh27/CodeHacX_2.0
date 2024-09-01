@@ -1,10 +1,12 @@
-import Topbar from '../layouts/Topbar'
+// import Topbar from '../layouts/Topbar'
+import Navigation from "../layouts/Navigation"
+import EventList from "../pages/EventList/EventList"
 
 const Event = () => {
   return (
     <div>
-      <Topbar/>
-      Coming Soon
+      <Navigation/>
+      <EventList/>
     </div>
   )
 }
